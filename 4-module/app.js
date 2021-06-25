@@ -1,3 +1,4 @@
+//require
 const counter=require('./counter.js');
 
 counter.increase();
