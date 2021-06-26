@@ -16,3 +16,5 @@ const readStream=fs.createReadStream('./file.txt',{
 }).on('error', error =>{
     console.log(error);
 });
+
+//once : 처음에 받아온 데이터만 처리됨
