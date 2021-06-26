@@ -1,5 +1,5 @@
 //file system 접근
- 
+//os 별로 경로가 달라지므로 일반화되게 사용
 const path= require('path');
 
 //현재 수행되는 디렉토리, 파일 이름
