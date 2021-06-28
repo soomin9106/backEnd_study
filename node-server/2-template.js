@@ -9,7 +9,6 @@ console.log(http.METHODS);
 const name='Soomin';
 const courses=[{name: 'HTML'},  {name: 'CSS'}, {name: 'JS'}];
 const server=http.createServer((req,res) => {
-    console.log('incoming....');
     const url=req.url;
     res.setHeader('Content-Type','text/html');
     if(url==='/'){
