@@ -12,20 +12,14 @@ const server=http.createServer((req,res) => {
     console.log(req.method);
     console.log(req.url);
     const url=req.url;
+    res.setHeader('Content-Type','text/html');
     if(url==='/'){
-        res.setHeader('Content-Type','text/html');
-        const read=fs.createReadStream('./html/index.html');
-        read.pipe(res);
+        fs.createReadStream('./html/index.html').pipe(res);
     } else if(url === '/courses'){
-        res.setHeader('Content-Type','text/html');
-        const read=fs.createReadStream('./html/courses.html');
-        read.pipe(res);
+        fs.createReadStream('./html/courses.html').pipe(res);
     } else{
-        res.setHeader('Content-Type','text/html');
-        const read=fs.createReadStream('./html/notfound.html');
-        read.pipe(res);
+        fs.createReadStream('./html/notfound.html').pipe(res);
     }
-    res.end(); //end
 });
 
 server.listen(8080); // listening port
