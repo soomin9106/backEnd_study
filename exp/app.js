@@ -1,6 +1,7 @@
 import express from 'express'
 import fs from 'fs';
 import fsAsync from 'fs/promises';
+import 'express-async-errors';
 
 const app=express();
 
@@ -50,7 +51,7 @@ app.get('/file3',async(req,res)=>{
         const data= await fsAsync.readFile('/file3.txt');
         res.send(data);
     } catch(error){
-        res.sendStatus(404)
+        res.sendStatus(404);
     }
 });
 
