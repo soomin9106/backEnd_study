@@ -4,7 +4,9 @@ import userRouter from './router/user.js';
 
 const app=express();
 
-app.use(express.json());
+app.use(express.json()); //REST API -> Body parsing 
+app.use(express.urlencoded({extended: false})); //HTML Form -> Body 
+app.use(express.static('public')); 
 
 app.use('/posts',postRouter);
 app.use('/users',userRouter);
